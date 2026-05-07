@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NN Explorer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-title">
+      <span class="header-logo">◈</span>
+      <span>NN Explorer</span>
+    </div>
+    <p class="header-subtitle">Significant neural network architectures, their history, and how they connect.</p>
+  </header>
+
+  <main class="app-main">
+    <!-- Left: selector -->
+    <aside class="sidebar">
+      <label for="nn-select" class="sidebar-label">Architecture</label>
+      <select id="nn-select" class="nn-select"></select>
+
+      <div class="nn-meta">
+        <span id="nn-title" class="nn-meta-name"></span>
+        <span id="nn-year"  class="nn-meta-year"></span>
+      </div>
+    </aside>
+
+    <!-- Right: tabs + panels -->
+    <section class="info-panel">
+      <div class="info-tabs">
+        <button class="tab-btn active" data-tab="visualizer">Visualizer</button>
+        <button class="tab-btn"        data-tab="stats">Stats</button>
+      </div>
+
+      <div class="tab-panels">
+        <!-- Visualizer -->
+        <div id="tab-visualizer" class="tab-content">
+          <canvas id="nn-canvas"></canvas>
+        </div>
+
+        <!-- Stats -->
+        <div id="tab-stats" class="tab-content hidden">
+          <div id="stats-content"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/nn-registry.js"></script>
+  <script src="js/nn-visualizer.js"></script>
+  <script src="js/feedforward-nns.js"></script>
+  <script src="js/convolutional-nns.js"></script>
+  <script src="js/recurrent-nns.js"></script>
+  <script src="js/attention-nns.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
